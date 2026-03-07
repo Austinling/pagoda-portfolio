@@ -217,10 +217,24 @@ export function ImageDithering() {
     };
   }, [dots]);
 
+  const imageWidth = pagodaImage?.width || 1000;
+  const imageHeight = pagodaImage?.height || 1000;
+
+  const finalX = (window.innerWidth * 0.7) / imageWidth;
+  const finalY = (window.innerHeight * 0.7) / imageHeight;
+
+  const finalScale = Math.min(finalX, finalY);
+
   return (
     <Stage width={window.innerWidth} height={window.innerHeight}>
       <Layer>
-        <Group ref={groupRef}>
+        <Group
+          ref={groupRef}
+          scaleX={finalScale}
+          scaleY={finalScale}
+          x={window.innerWidth - imageWidth * finalScale - 50}
+          y={(window.innerHeight - imageHeight * finalScale) / 2}
+        >
           {dots.map((dot, i) => (
             <Circle key={i} x={dot.x} y={dot.y} radius={1} fill={dot.color} />
           ))}
