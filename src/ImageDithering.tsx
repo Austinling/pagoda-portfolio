@@ -189,8 +189,6 @@ export function ImageDithering() {
     const animation = new Konva.Animation((frame) => {
       if (!groupRef.current || dots.length === 0) return;
 
-      const time = frame.time / 1000;
-
       const children = groupRef.current?.getChildren();
 
       for (let i = 0; i < children.length; i++) {
@@ -220,8 +218,8 @@ export function ImageDithering() {
   const imageWidth = pagodaImage?.width || 1000;
   const imageHeight = pagodaImage?.height || 1000;
 
-  const finalX = (window.innerWidth * 0.7) / imageWidth;
-  const finalY = (window.innerHeight * 0.7) / imageHeight;
+  const finalX = (window.innerWidth * 0.9) / imageWidth;
+  const finalY = (window.innerHeight * 0.9) / imageHeight;
 
   const finalScale = Math.min(finalX, finalY);
 
@@ -232,8 +230,8 @@ export function ImageDithering() {
           ref={groupRef}
           scaleX={finalScale}
           scaleY={finalScale}
-          x={window.innerWidth - imageWidth * finalScale - 50}
-          y={(window.innerHeight - imageHeight * finalScale) / 2}
+          x={(window.innerWidth - imageWidth * finalScale) / 2}
+          y={0}
         >
           {dots.map((dot, i) => (
             <Circle key={i} x={dot.x} y={dot.y} radius={1} fill={dot.color} />
