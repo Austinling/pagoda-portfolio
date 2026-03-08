@@ -4,19 +4,20 @@ import { Navbar } from "./Navbar";
 import { Title } from "./Title";
 import { TechStack } from "./TechStack";
 import { Projects } from "./Projects";
+import { AboutMe } from "./AboutMe";
 
 function App() {
   return (
     <>
       <Navbar />
-      <Title />
       <div className="flex w-full">
-        <ImageDithering imageRef="/images/pagoda.png" scale={0.9} />
+        <ImageDithering imageRef="/images/pagoda.png" scale={0.82} />
       </div>
-      <div className="mt-10">
+      <div className="flex flex-col gap-20">
+        <AboutMe />
         <TechStack />
+        <Projects />
       </div>
-      <Projects />
     </>
   );
 }

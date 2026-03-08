@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import useImage from "use-image";
 import { Circle, Layer, Stage, Group } from "react-konva";
+import { Html } from "react-konva-utils";
 import Konva from "konva";
+import { Title } from "./Title";
 
 type Color = {
   r: number;
@@ -223,10 +225,18 @@ export function ImageDithering({
 
   const imageHeight = pagodaImage?.height || 1000;
 
+  if (window.innerWidth > 1200) {
+    scale = 0.7;
+  } else if (window.innerWidth > 1000) {
+    scale = 0.9;
+  } else {
+    scale = 1;
+  }
+
   const imageWidth = pagodaImage?.width || 1000;
-  const finalScale = window.innerWidth / imageWidth;
+  const finalScale = (window.innerWidth * scale) / imageWidth;
   const renderedImageHeight = imageHeight * finalScale;
-  const isPhoneScreen = window.innerWidth < 768;
+  const isPhoneScreen = window.innerWidth < 900;
   const stageHeight = isPhoneScreen
     ? renderedImageHeight
     : Math.max(window.innerHeight, renderedImageHeight);
@@ -234,6 +244,20 @@ export function ImageDithering({
   return (
     <Stage width={window.innerWidth} height={stageHeight}>
       <Layer>
+        <Html
+          divProps={{
+            style: {
+              width: "100vw",
+              display: "flex",
+              justifyContent: "center",
+              alignContent: "center",
+              pointerEvents: "none",
+            },
+          }}
+        >
+          {" "}
+          <Title />
+        </Html>
         <Group
           ref={groupRef}
           scaleX={finalScale}
