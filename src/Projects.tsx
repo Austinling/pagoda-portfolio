@@ -16,19 +16,22 @@ export function Projects() {
   if (!data) return;
 
   return (
-    <div className="grid p-5 lg:grid-cols-2 grid-cols-1 text-white">
+    <div className="relative grid p-5 lg:grid-cols-2 grid-cols-1 text-white">
+      <div id="projects" className="absolute -top-25"></div>
       {Object.values(data.projects).map((project, index) => {
         return (
-          <div key={index} className="flex flex-col gap-10 p-5">
-            <div className="mb-auto mt-auto text-center">
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-2xl font-bold hover:text-blue-500 bitcount-single-bold"
-              >
-                {project.title}
-              </a>
+          <div key={`${index}+${project}`} className="flex flex-col gap-10 p-5">
+            <div className="flex flex-col items-center justify-center">
+              <div className="mb-auto mt-auto text-center">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-2xl font-bold hover:text-blue-500 bitcount-single-bold border-b-2 border-dotted"
+                >
+                  {project.title}
+                </a>
+              </div>
             </div>
 
             <div className="mb-auto mt-auto flex flex-col md:flex-row gap-8 items-center">
@@ -41,7 +44,7 @@ export function Projects() {
             <div className="grid md:grid-cols-3 grid-cols-2 gap-10">
               {Object.entries(project.technologies).map(([key, value]) => {
                 return (
-                  <div className="flex gap-3">
+                  <div key={`${key}${value}`} className="flex gap-3">
                     <img
                       className="w-10 h-10 object-contain"
                       src={`${baseUrl}${value}`}

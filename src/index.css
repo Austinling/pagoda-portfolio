@@ -5,6 +5,14 @@ body{
   overflow-x:hidden;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
+canvas{
+  pointer-events: none;
+}
+
 .ultra-regular {
   font-family: "Ultra", serif;
   font-weight: 400;

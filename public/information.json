@@ -74,7 +74,7 @@
         },
         "project2": {
             "title": "Multiplayer AI Chatroom",
-            "description": "Real-time collaborative AI platform built in 24 hours. Features synchronized WebSocket states for user presence and 'typing' indicators, integrated with FastAPI and Supabase for live data streaming and chat persistence.",
+            "description": "Real-time multi persona AI platform built in 24 hours. Features synchronized WebSocket states for user presence and 'typing' indicators, integrated with FastAPI and Supabase for live data streaming and chat persistence.",
             "picture": "./images/odysseychat.jpg",
             "link": "https://github.com/Austinling/HackSheffield",
             "technologies": {
@@ -83,6 +83,29 @@
                 "Supabase": "images/supabase.png",
                 "Tailwind CSS": "images/tailwind.png",
                 "GPT-4o": "images/gpt.png"
+            }
+        },
+        "project3": {
+            "title": "Login Puzzle Hell",
+            "description": "Website where you have to build your login page to login. Tech Vision UI/UX hackathon winner!",
+            "picture": "./images/puzzlehell.png",
+            "link": "https://tech-vision-ux-hack.vercel.app/",
+            "technologies": {
+                "React": "images/react.png",
+                "Typescript": "images/typescript.png",
+                "Konva React Canvas": "images/konva.png"
+
+            }
+        },
+        "project4": {
+            "title": "Boss Battle",
+            "description": "Game where you use a whip to fight a Boss. The Boss has different stages and uses custom physics for the stages.",
+            "picture": "./images/bossbattle.png",
+            "link": "https://tech-vision-ux-hack.vercel.app/",
+            "technologies": {
+                "React": "images/react.png",
+                "Typescript": "images/typescript.png",
+                "Konva React Canvas": "images/konva.png"
             }
         }
     }

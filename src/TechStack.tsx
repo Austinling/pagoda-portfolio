@@ -16,7 +16,8 @@ export function TechStack() {
   if (!data) return;
 
   return (
-    <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 text-center justify-center bitcount-single-bits gap-10 text-4xl text-white">
+    <div className="relative grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 text-center justify-center bitcount-single-bits gap-10 text-4xl text-white">
+      <div id="teckstack" className="absolute -top-25"></div>
       <div className="flex flex-col gap-5 items-center">
         <h1>Languages</h1>
         <div className="border-b-2 border-dotted w-70"></div>
@@ -25,7 +26,7 @@ export function TechStack() {
           {Object.values(data.languages).map((language, index) => {
             return (
               <div
-                key={index}
+                key={`${index}+${language}`}
                 className="flex items-center justify-center p-5 gap-10"
               >
                 <img
@@ -47,7 +48,7 @@ export function TechStack() {
           {Object.values(data.libraries).map((library, index) => {
             return (
               <div
-                key={index}
+                key={`${index}+${library}`}
                 className="flex items-center justify-center p-5 gap-10"
               >
                 <img
@@ -69,7 +70,7 @@ export function TechStack() {
           {Object.values(data.tools).map((tool, index) => {
             return (
               <div
-                key={index}
+                key={`${index}+${tool}`}
                 className="flex items-center justify-center p-5 gap-10"
               >
                 <img

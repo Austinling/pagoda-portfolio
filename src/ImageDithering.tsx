@@ -242,7 +242,7 @@ export function ImageDithering({
     : Math.max(window.innerHeight, renderedImageHeight);
 
   return (
-    <Stage width={window.innerWidth} height={stageHeight}>
+    <Stage width={window.innerWidth} height={stageHeight} listening={false}>
       <Layer>
         <Html
           divProps={{
