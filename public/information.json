@@ -101,7 +101,7 @@
             "title": "Boss Battle",
             "description": "Game where you use a whip to fight a Boss. The Boss has different stages and uses custom physics for the stages.",
             "picture": "./images/bossbattle.png",
-            "link": "https://tech-vision-ux-hack.vercel.app/",
+            "link": "https://github.com/Austinling/ConnectionsGame",
             "technologies": {
                 "React": "images/react.png",
                 "Typescript": "images/typescript.png",

@@ -9,6 +9,7 @@ import { AboutMe } from "./AboutMe";
 function App() {
   return (
     <>
+      <div id="start" className="absolute top-0"></div>
       <Navbar />
       <div className="flex w-full">
         <ImageDithering imageRef="/images/pagoda.png" scale={0.82} />

@@ -16,7 +16,7 @@ export function Title() {
         <TypeWriter
           text="I like building solutions to real world problems"
           textSize={"text-2xl"}
-          speed={50}
+          speed={20}
         ></TypeWriter>
       )}
     </div>
