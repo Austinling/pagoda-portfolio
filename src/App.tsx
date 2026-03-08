@@ -3,6 +3,7 @@ import { ImageDithering } from "./ImageDithering";
 import { Navbar } from "./Navbar";
 import { Title } from "./Title";
 import { TechStack } from "./TechStack";
+import { Projects } from "./Projects";
 
 function App() {
   return (
@@ -10,9 +11,12 @@ function App() {
       <Navbar />
       <Title />
       <div className="flex w-full">
-        <ImageDithering />
+        <ImageDithering imageRef="/images/pagoda.png" scale={0.9} />
       </div>
-      <TechStack />
+      <div className="mt-10">
+        <TechStack />
+      </div>
+      <Projects />
     </>
   );
 }

@@ -1,24 +1,5 @@
 import { useEffect, useState } from "react";
-
-type ProjectDetails = {
-  title: string;
-  description: string;
-  picture: string;
-  link: string;
-  technologies: string;
-};
-
-type Details = {
-  name: string;
-  image: string;
-};
-
-type SkillsType = {
-  languages: Record<string, Details>;
-  libraries: Record<string, Details>;
-  tools: Record<string, Details>;
-  projects: Record<string, ProjectDetails>;
-};
+import type { SkillsType } from "./Types.ts";
 
 export function TechStack() {
   const [data, setData] = useState<SkillsType | null>(null);
@@ -80,7 +61,7 @@ export function TechStack() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-5 items-center lg:col-span-1 md:col-span-2 sm-col-span-1">
+      <div className="flex flex-col gap-5 items-center lg:col-span-1 md:col-span-2 sm-col-span1">
         <h1>Tools</h1>
         <div className="border-b-2 border-dotted w-70"></div>
 

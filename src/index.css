@@ -2,6 +2,7 @@
 
 body{
   background-color: black;
+  overflow-x:hidden;
 }
 
 .ultra-regular {
@@ -28,6 +29,17 @@ body{
     "ELXP" 0;
 }
 
+.bitcount-single-bold {
+  font-family: "Bitcount Single", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
+}
 nav * {
   color:white
 }

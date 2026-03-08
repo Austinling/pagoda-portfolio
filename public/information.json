@@ -17,7 +17,11 @@
             "name": "TypeScript",
             "image": "images/typescript.png"
         },
-        "language5": {
+        "language5":{
+            "name": "Java",
+            "image": "images/java.png"
+        },
+        "language6": {
             "name": "SQL",
             "image": "images/sql.png"
         }

@@ -124,8 +124,14 @@ function makeDithered(imageData: ImageData, factor: number) {
   }
 }
 
-export function ImageDithering() {
-  const [pagodaImage, status] = useImage("/images/pagoda.png", "anonymous");
+export function ImageDithering({
+  imageRef,
+  scale,
+}: {
+  imageRef: string;
+  scale: number;
+}) {
+  const [pagodaImage, status] = useImage(`${imageRef}`, "anonymous");
 
   const [dots, setDots] = useState<
     {
@@ -186,7 +192,7 @@ export function ImageDithering() {
   }, [status, pagodaImage]);
 
   useEffect(() => {
-    const animation = new Konva.Animation((frame) => {
+    const animation = new Konva.Animation(() => {
       if (!groupRef.current || dots.length === 0) return;
 
       const children = groupRef.current?.getChildren();
@@ -215,16 +221,18 @@ export function ImageDithering() {
     };
   }, [dots]);
 
-  const imageWidth = pagodaImage?.width || 1000;
   const imageHeight = pagodaImage?.height || 1000;
 
-  const finalX = (window.innerWidth * 0.9) / imageWidth;
-  const finalY = (window.innerHeight * 0.9) / imageHeight;
-
-  const finalScale = Math.min(finalX, finalY);
+  const imageWidth = pagodaImage?.width || 1000;
+  const finalScale = window.innerWidth / imageWidth;
+  const renderedImageHeight = imageHeight * finalScale;
+  const isPhoneScreen = window.innerWidth < 768;
+  const stageHeight = isPhoneScreen
+    ? renderedImageHeight
+    : Math.max(window.innerHeight, renderedImageHeight);
 
   return (
-    <Stage width={window.innerWidth} height={window.innerHeight}>
+    <Stage width={window.innerWidth} height={stageHeight}>
       <Layer>
         <Group
           ref={groupRef}

@@ -5,7 +5,7 @@ export function Title() {
   const [secondText, showSecondText] = useState(false);
 
   return (
-    <div className="flex items-center justify-center mt-20 mb-10 text-center flex-col gap-10">
+    <div className="flex items-center justify-center mt-20 mb-10 text-center flex-col gap-10 px-5">
       <TypeWriter
         text="Hi! I'm Austin"
         textSize={"text-5xl"}
